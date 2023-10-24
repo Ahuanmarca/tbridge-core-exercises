@@ -29,17 +29,6 @@ const boat = {
   },
 };
 
-const loopBreaker = {
-  count: 0,
-  tolerance: 20,
-  increaseCount() {
-    return ++this.count;
-  },
-  break() {
-    return this.count >= this.tolerance;
-  },
-};
-
 const findBy = (array, action = "find", criteria = "lightest") => {
   // Defensive conditions
   const [validActions, validCriteria] = [
@@ -101,7 +90,20 @@ function printStatus(west, east, boat) {
   );
 }
 
-console.log(`
+// DRIVER CODE
+function riverCrossing() {
+  const loopBreaker = {
+    count: 0,
+    tolerance: 20,
+    increaseCount() {
+      return ++this.count;
+    },
+    break() {
+      return this.count >= this.tolerance;
+    },
+  };
+
+  console.log(`
                   /|___
                 ///|   ))
               /////|   )))
@@ -116,8 +118,6 @@ console.log(`
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `);
 
-// DRIVER CODE
-function riverCrossing() {
   printStatus(west, east, boat);
 
   // * Defensive condition: The task can't be completed IF:
@@ -184,4 +184,13 @@ function riverCrossing() {
   return "All passengers crossed the river!";
 }
 
-console.log(riverCrossing());
+// console.log(riverCrossing());
+module.exports = {
+  west,
+  east,
+  boat,
+  findBy,
+  nextFits,
+  printStatus,
+  riverCrossing,
+};
