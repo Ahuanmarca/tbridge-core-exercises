@@ -31,6 +31,7 @@ const game = {
   guess: [],
   secretNumbers,
   secretMap,
+  testedNumbers: Array(10).fill(false),
 }
 
 // Building the page structure
@@ -74,13 +75,31 @@ enterButton.addEventListener("click", (e) => {
   if (game.guess.length === game.columns && game.active) {
     const rowColors = checkGuess(game.guess, game.secretNumbers, game.secretMap);
     rowColors.forEach((color, index) => {
+      // change cell color
       const cell = document.querySelector(`.row-${game.attempts}`).childNodes[index];
       cell.style.backgroundColor = color;
       cell.style.color = 'white';
+      
+      // change button color
+      // TODO: Refactor! Make better use of classes
+      const colorStep = {
+        false: 0,
+        "#797C7E": 1, // gray, absent
+        "#C5B565": 2, // yellow, present
+        "#79A86B": 3, // green, correct
+
+      }
+      const button = document.querySelector(`.number-button-${game.guess[index]}`);
+      if (colorStep[color] > colorStep[game.testedNumbers[game.guess[index]]]) {
+        game.testedNumbers[game.guess[index]] = color;
+        button.style.backgroundColor = color;
+        button.style.color = 'white';
+      }
     })
+    
     game.attempts++;
     game.guess.splice(0, game.guess.length);
 
-    if (game.attempts === 5 || rowColors.every(color => color === '#79A86B')) game.active = false;
+    if (game.attempts === game.rows || rowColors.every(color => color === '#79A86B')) game.active = false;
   }
 });
