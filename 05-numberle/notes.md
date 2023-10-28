@@ -7,3 +7,5 @@
 - Event Listeners: Execute a function when some event is detected
   - Events are passed to the functions that is executed by the event listener
   
+
+Para subir webs a front usamos VERCEL

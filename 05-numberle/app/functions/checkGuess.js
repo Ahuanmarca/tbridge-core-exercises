@@ -18,3 +18,8 @@ export function checkGuess(guess, secretNumbers, secretMap) {
   }
   return output;
 }
+
+// guess            [1,2,3,4,5]
+// secretNumbers    [1,3,2,2,6]
+// secretMap = { 1: 1, 2: 2, 2: 1, 6: 1}
+// output = [ green, yellow, yellow, gray, gray ]

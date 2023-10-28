@@ -1,4 +1,4 @@
-export function generateSecretNumbers(debug = false, count = 5) {
+export function generateSecretNumbers(debug = false, count = 5, debugNums) {
   const secretNumbers = [];
   const secretMap = {};
   for (let i = 0; i < count; i++) {
@@ -9,9 +9,8 @@ export function generateSecretNumbers(debug = false, count = 5) {
   }
 
   if (debug) {
-    console.warn('🐞🐞 generateSecretNumbers() debug mode true 🐞🐞')
-    console.warn('🐞🐞 secret numbers: ', secretNumbers);
-
+    console.warn("🐞🐞 generateSecretNumbers() debug mode true 🐞🐞");
+    console.warn("🐞🐞 secret numbers: ", secretNumbers);
   }
   return { secretNumbers, secretMap };
 }

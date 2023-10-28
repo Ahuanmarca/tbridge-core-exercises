@@ -47,35 +47,37 @@ gameContainer.appendChild(
 superContainer.appendChild(gameContainer);
 root.appendChild(superContainer);
 
-const enterButton = document.querySelector(".enter-button");
 const numberButtons = document.querySelectorAll(".number-button");
-const deleteButton = document.querySelector(".delete-button");
-
 numberButtons.forEach((b) =>
   b.addEventListener("click", (e) => {
+    // if row no esta lleno, juego sigue activo
     if (game.guess.length < game.columns && game.active) {
-      document.querySelector(`.row-${game.attempts}`).childNodes[
-        game.guess.length
-      ].innerText = e.target.value;
+      const row = document.querySelector(`.row-${game.attempts}`);
+      const cells = row.childNodes;
+      const currentCell = cells[game.guess.length];
+      currentCell.innerText = e.target.value;
       game.guess.push(e.target.value);
     }
   })
 );
 
+const deleteButton = document.querySelector(".delete-button");
 deleteButton.addEventListener("click", (e) => {
   if (game.guess.length > 0 && game.active) {
-    document.querySelector(`.row-${game.attempts}`).childNodes[
-      game.guess.length - 1
-    ].innerText = "";
+    const row = document.querySelector(`.row-${game.attempts}`);
+    const cells = row.childNodes;
+    const cell = cells[game.guess.length - 1];
+    cell.innerText = "";
     game.guess.pop();
   }
 });
 
-enterButton.addEventListener("click", (e) => {
+const enterButton = document.querySelector(".enter-button");
+enterButton.addEventListener("click", () => {
   if (game.guess.length === game.columns && game.active) {
-    const rowColors = checkGuess(
-      game.guess,
-      game.secretNumbers,
+    const rowColors = checkGuess(  // [ green, green, gray, gray, gray ]
+      game.guess, // [ 1, 2, 3 , 4, 5]
+      game.secretNumbers, // [ 1, 2, 0, 0, 0 ]
       game.secretMap
     );
     rowColors.forEach((color, index) => {
@@ -87,7 +89,7 @@ enterButton.addEventListener("click", (e) => {
       cell.style.color = "white";
 
       // change button color
-      // TODO: It's too confusing 😵‍💫 REFACTOR!
+      // TODO: Too confusing! 😵‍💫 REFACTOR!
       const colorStep = {
         false: 0,
         "#797C7E": 1, // gray, absent
