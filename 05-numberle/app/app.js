@@ -25,20 +25,20 @@ const { secretNumbers, secretMap } = generateSecretNumbers(true);
 
 const game = {
   active: true,
-  attempts: 0,      // serves to index a grid row
-  rows: 6,          // attempts allowed
-  columns: 5,       // secret number length
+  attempts: 0, // serves to index a grid row
+  rows: 6, // attempts allowed
+  columns: 5, // secret number length
   guess: [],
   secretNumbers,
   secretMap,
   testedNumbers: Array(10).fill(false),
-}
+};
 
 // Building the page structure
-const superContainer = document.createElement('div');
-superContainer.classList.add('super-container');
-const gameContainer = document.createElement('div');
-gameContainer.classList.add('game-container');
+const superContainer = document.createElement("div");
+superContainer.classList.add("super-container");
+const gameContainer = document.createElement("div");
+gameContainer.classList.add("game-container");
 gameContainer.appendChild(createHeader("NUMBERLE"));
 gameContainer.appendChild(createGrid(game.rows, game.columns));
 gameContainer.appendChild(
@@ -49,7 +49,7 @@ root.appendChild(superContainer);
 
 const enterButton = document.querySelector(".enter-button");
 const numberButtons = document.querySelectorAll(".number-button");
-const deleteButton = document.querySelector(".delete-button")
+const deleteButton = document.querySelector(".delete-button");
 
 numberButtons.forEach((b) =>
   b.addEventListener("click", (e) => {
@@ -73,33 +73,44 @@ deleteButton.addEventListener("click", (e) => {
 
 enterButton.addEventListener("click", (e) => {
   if (game.guess.length === game.columns && game.active) {
-    const rowColors = checkGuess(game.guess, game.secretNumbers, game.secretMap);
+    const rowColors = checkGuess(
+      game.guess,
+      game.secretNumbers,
+      game.secretMap
+    );
     rowColors.forEach((color, index) => {
       // change cell color
-      const cell = document.querySelector(`.row-${game.attempts}`).childNodes[index];
+      const cell = document.querySelector(`.row-${game.attempts}`).childNodes[
+        index
+      ];
       cell.style.backgroundColor = color;
-      cell.style.color = 'white';
-      
+      cell.style.color = "white";
+
       // change button color
-      // TODO: Refactor! Make better use of classes
+      // TODO: It's too confusing 😵‍💫 REFACTOR!
       const colorStep = {
         false: 0,
         "#797C7E": 1, // gray, absent
         "#C5B565": 2, // yellow, present
         "#79A86B": 3, // green, correct
-
-      }
-      const button = document.querySelector(`.number-button-${game.guess[index]}`);
+      };
+      const button = document.querySelector(
+        `.number-button-${game.guess[index]}`
+      );
       if (colorStep[color] > colorStep[game.testedNumbers[game.guess[index]]]) {
         game.testedNumbers[game.guess[index]] = color;
         button.style.backgroundColor = color;
-        button.style.color = 'white';
+        button.style.color = "white";
       }
-    })
-    
+    });
+
     game.attempts++;
     game.guess.splice(0, game.guess.length);
 
-    if (game.attempts === game.rows || rowColors.every(color => color === '#79A86B')) game.active = false;
+    if (
+      game.attempts === game.rows ||
+      rowColors.every((color) => color === "#79A86B")
+    )
+      game.active = false;
   }
 });
