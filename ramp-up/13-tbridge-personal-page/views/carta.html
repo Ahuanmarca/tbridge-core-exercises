@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta Estilizada</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <style>
+      /* USAR
+
+      FONTS
+      font-family: 'Gloria Hallelujah', cursive;
+      font-family: 'Fuggles', cursive;
+      font-family: 'Handlee', cursive;
+      font-family: 'Inter', sans-serif;
+
+      TODO: Put font families in variables
+      */
+
+      @import url("https://fonts.googleapis.com/css2?family=Fuggles&family=Gloria+Hallelujah&family=Handlee&family=Inter:wght@300&display=swap");
+      @font-face { font-family: Pixelmania; src: url(../assets/letter/Pixelmania.ttf); }
+      @font-face { font-family: Creattion; src: url(../assets/letter/Creattion\ Demo.otf); }
+
+      /* font-family: "Pixelmania", "Creattion" */
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      /* Class applied to the <body> tag */
+      .letter-paper {
+        padding: 3rem;
+        background-color: darkslategrey;
+      }
+
+      .super-container {
+        background-color: beige;
+        border: 10px dashed darkgray;
+        padding: 4rem;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* HEADER SECTION */
+
+      .header-row {
+        display: flex;
+        margin-bottom: 2rem;
+      }
+
+      .header-row > div {
+        width: 50%;
+      }
+
+      /* .header-logo > p {
+  text-align: left;
+  font-family: Pixelmania;
+} */
+
+      /* .header-logo > p > span:nth-of-type(1) { */
+      .awesome-text-01 {
+        text-align: left;
+        font-family: Pixelmania;
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+      }
+
+      /* .header-logo > p > span:nth-of-type(2) { */
+      .awesome-text-02 {
+        text-align: left;
+        font-family: Pixelmania;
+        font-size: 1.4rem;
+      }
+
+      .header-logo > img {
+        width: 50%;
+      }
+
+      .header-remitente {
+        text-align: right;
+        font-style: italic;
+      }
+
+      .header-destinatario {
+        text-align: left;
+        font-style: italic;
+      }
+
+      .header-remitente > div,
+      .header-destinatario > div {
+        margin: 0.5rem 0;
+      }
+
+      .header-remitente > div:nth-of-type(1),
+      .header-destinatario > div:nth-of-type(1) {
+        font-family: "Gloria Hallelujah", cursive;
+        font-size: 1.2rem;
+        color: brown;
+        /* margin-bottom: 0.5rem; */
+      }
+
+      .header-details {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.8rem;
+      }
+
+      /*
+░█████╗░██╗░░░██╗███████╗██████╗░██████╗░░█████╗░
+██╔══██╗██║░░░██║██╔════╝██╔══██╗██╔══██╗██╔══██╗
+██║░░╚═╝██║░░░██║█████╗░░██████╔╝██████╔╝██║░░██║
+██║░░██╗██║░░░██║██╔══╝░░██╔══██╗██╔═══╝░██║░░██║
+╚█████╔╝╚██████╔╝███████╗██║░░██║██║░░░░░╚█████╔╝
+░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░░░░░╚════╝░
+*/
+
+      .standart-paragraph {
+        padding: 0 1rem;
+        text-align: justify;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+        hyphens: auto;
+      }
+
+      li.standart-paragraph {
+        padding-left: 0;
+        margin-left: 4rem;
+      }
+
+      dt.standart-paragraph {
+        padding-left: 2rem;
+        text-decoration: underline;
+        text-underline-offset: 0.3rem;
+      }
+
+      dd.standart-paragraph {
+        padding-left: 4rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      h1,
+      h2 {
+        font-family: "Gloria Hallelujah", cursive;
+        color: brown;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: circle;
+      }
+
+      /* 
+███████╗░█████╗░░█████╗░████████╗███████╗██████╗░
+██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗░░██║░░██║██║░░██║░░░██║░░░█████╗░░██████╔╝
+██╔══╝░░██║░░██║██║░░██║░░░██║░░░██╔══╝░░██╔══██╗
+██║░░░░░╚█████╔╝╚█████╔╝░░░██║░░░███████╗██║░░██║
+╚═╝░░░░░░╚════╝░░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+*/
+
+      footer > p:nth-of-type(1) {
+        margin-top: 2rem;
+        margin-bottom: 7rem;
+        font-weight: bold;
+      }
+
+      .signature {
+        font-family: Creattion;
+        font-size: 4rem;
+        margin: 4rem o 1rem 0;
+        color: brown;
+        margin-bottom: 3rem;
+      }
+
+      footer > p:nth-of-type(3) {
+        width: 100%;
+        margin: 2rem 0;
+        writing-mode: vertical-rl;
+        text-align: right;
+        letter-spacing: 0.3rem;
+      }
+
+      q::before {
+        content: open-quote;
+      }
+
+      q::after {
+        content: close-quote;
+      }
+
+      footer {
+        position: relative;
+      }
+
+      footer > img {
+        position: absolute;
+        top: 450px;
+        left: 20px;
+        height: 30%;
+      }
+    </style>
+  </head>
+  <body class="letter-paper">
+    <div class="super-container">
+      <header>
+        <div class="header-row">
+          <div class="header-logo">
+            <!-- <img src="./files/castle-7440761_1280.png" alt="" /> -->
+            <img src="../assets/letter/castle-7440761_1280.png" alt="" />
+            <div>
+              <div class="awesome-text-01">
+                <span>U</span><span>N</span><span>I</span><span>V</span
+                ><span>E</span><span>R</span><span>S</span><span>I</span
+                ><span>T</span><span>Y</span><span>&nbsp;</span><span>O</span
+                ><span>F</span>
+              </div>
+              <div class="awesome-text-02">
+                <span>A</span><span>W</span><span>E</span><span>S</span
+                ><span>O</span><span>M</span><span>E</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-remitente">
+            <div>
+              <strong>Dr. Eleanor Gaye</strong>
+            </div>
+            <div class="header-details">
+              <adress>
+                Awesome Science faculty<br />
+                University of Awesome<br />
+                Bobtown. CA 99999.<br />
+                USA
+              </adress>
+            </div>
+            <div class="header-details">
+              <b>Tel:</b> 123-456-7890<br />
+              <b>Mail:</b> eleanor@awesome.com
+            </div>
+            <div class="header-details">January 2016</div>
+          </div>
+        </div>
+
+        <div class="header-row">
+          <div class="header-destinatario">
+            <div>
+              <strong>Miss Eileen Dover</strong>
+            </div>
+            <div class="header-details">
+              <adress>
+                4321 Cliff Top Edge<br />
+                Dover. CT9 XXX<br />
+                UK
+              </adress>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <h1>Re: Eileen Dover university application</h1>
+
+        <!-- SECCION: INTRODUCCION -->
+        <section>
+          <div>
+            <p class="standart-paragraph"><b>Dear Eileen,</b></p>
+          </div>
+          <div>
+            <p class="standart-paragraph">
+              Thank you for your recent application to join us at the University
+              of Awesome&apos;s science faculty to study as part of your PhD
+              next year. I will answer your questions one by one, in the
+              following sections.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECCION: STARGING DATES -->
+        <section>
+          <h2>Starting dates</h2>
+          <div>
+            <p class="standart-paragraph">
+              We are happy to accomodate you starting your study with us at any
+              time, however it would suit us better if you could start at the
+              beginning of a semester; the start dates for each one are as
+              follows:
+            </p>
+          </div>
+          <div>
+            <ul>
+              <li class="standart-paragraph">
+                First semester: 9 September 2016
+              </li>
+              <li class="standart-paragraph">
+                Second semester: 15 January 2017
+              </li>
+              <li class="standart-paragraph">Third semester 2 May 2017</li>
+            </ul>
+          </div>
+          <div>
+            <p class="standart-paragraph">
+              Please let me know if this is ok. and if so which start date you
+              would prefer.
+            </p>
+            <p class="standart-paragraph">
+              You can find more information about
+              <a href="www.example.com">important university dates</a> on our
+              website.
+            </p>
+          </div>
+        </section>
+
+        <!-- SECTION: SUBJECTS OF STUDY -->
+        <section>
+          <div>
+            <h2>Subjects of study</h2>
+          </div>
+          <div>
+            <p class="standart-paragraph">
+              At the Awesome Science Faculty, we have a pretty open-minded
+              research facility — as long as the subjects fall somewhere in the
+              realm of science and technology. You seem like an intelligent,
+              dedicated researcher, and just the kind of person we'd like to
+              have on our team. Saying that, of the ideas you submitted we were
+              most intrigued by are as follows, in order of priority:
+            </p>
+          </div>
+
+          <div>
+            <ol>
+              <li class="standart-paragraph">
+                Turning H<sub>2</sub>O💦 into wine🍷, and the health benefits of
+                Rcsveratrol (C<sub>14</sub>H<sub>12</sub>O<sub>3</sub>.)
+              </li>
+              <li class="standart-paragraph">
+                Measuring the effect on performance of funk bassplaycrs at
+                tcmpraturcs exceeding 30°C (86°F), when the audience size
+                exponentially increases (effect of 3 x 10<sup>3</sup> &gt; 3 x
+                10<sup>4</sup>.)
+              </li>
+              <li class="standart-paragraph">
+                <u>HTML</u> and <u>CSS</u> constructs for representing musical
+                scores.
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <p class="standart-paragraph">
+              So please can you provide more information on each of these
+              subjects, including how long you'd expect the research to take,
+              required staff and other resources, and anything else you think
+              we'd need to know? Thanks.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <h2>Exotic dance moves</h2>
+          </div>
+          <div>
+            <p class="standart-paragraph">
+              Yes, you are right! As part of my post-doctorate work. I did study
+              exotic tribal dances. To answer your question, my favourite dances
+              are as follows, with definitions:
+            </p>
+          </div>
+          <div>
+            <dl>
+              <dt class="standart-paragraph">Polynesian chicken dance</dt>
+              <dd class="standart-paragraph">
+                A little known but very influential dance dating back as far as
+                300BC. a whole village would dance around in a circle like
+                chickens, to encourage their livestock or be "fruitful*.
+              </dd>
+
+              <dt class="standart-paragraph">Icelandic brownian shuffle</dt>
+              <dd class="standart-paragraph">
+                Before the Icelanders developed fire as a means of getting warm,
+                they used to practice this dance, which involved huddling close
+                together in a circle on the floor, and shuffling their bodies
+                around in impcrccptably tiny, very rapid movements. One of my
+                fellow students used to say that he thought this dance inspired
+                modem styles such as Twerking.
+              </dd>
+
+              <dt class="standart-paragraph">Arctic robot dance</dt>
+              <dd class="standart-paragraph">
+                An interesting example of historic misinformation. English
+                explorers in the 1960s believed to have discovered a new dance
+                style characterised by "robotic*, stilted movements, being
+                practiced by inhabitants of Northern Alaska and Canada. Later on
+                however it was discovered that they were just moving like this
+                because they were really cold.
+              </dd>
+            </dl>
+          </div>
+
+          <div>
+            <p class="standart-paragraph">
+              For more of my research,
+              <a href="www.example.com">see my exotic dance research page.</a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p class="standart-paragraph">Yours sincerely.</p>
+        <p class="standart-paragraph signature"><b>Dr Eleanor Gaye</b></p>
+        <hr />
+        <p class="standart-paragraph">
+          <q><b>Be excellent to each other.</b></q
+          ><br />
+          <i>Bill S Preston. Esq&nbsp;</i>
+        </p>
+        <img src="./files/robot.png" alt="" />
+      </footer>
+    </div>
+  </body>
+
+  <script>
+    const coolColors = [
+      "rgb(93, 93, 93)",
+      "rgb(97, 62, 31)",
+      "rgb(1, 1, 0)",
+      "rgb(161, 64, 57)",
+    ];
+    let [i, j, k, n] = [0, 2, 4, 6];
+
+    setInterval(() => {
+      i > 0 ? i-- : (i = 6);
+      j > 0 ? j-- : (j = 6);
+      k > 0 ? k-- : (k = 6);
+      n > 0 ? n-- : (n = 6);
+
+      const awesomeNodes = document.querySelector(".awesome-text-02").children;
+      awesomeNodes[i].style.color = coolColors[0];
+      awesomeNodes[j].style.color = coolColors[1];
+      awesomeNodes[k].style.color = coolColors[2];
+      awesomeNodes[n].style.color = coolColors[3];
+    }, 50);
+  </script>
+</html>

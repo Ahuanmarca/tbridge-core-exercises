@@ -1,0 +1,4 @@
+{
+  "javascript.inlayHints.enumMemberValues.enabled": false,
+  "editor.parameterHints.enabled": false
+}

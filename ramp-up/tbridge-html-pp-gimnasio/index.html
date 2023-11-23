@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <!-- 
+    Character entities used. Necessary?
+    #   &#35;
+    $   &#36;
+    %   &#37;
+    @   &#64;
+    /   &#47;
+   -->
+
+  <body>
+    <!-- APP HEADER SECTION -->
+    <header>
+      <div class="app-bar">
+        <div>
+          <h1>El Gordo Gervasio</h1>
+        </div>
+        <div>
+          <ul class="nav-box">
+            <li><a class="nav-link" href="./welcome.html">Home</a></li>
+            <li class="current-page">
+              <a class="nav-link" href="./index.html">Invoice</a>
+            </li>
+            <li><a class="nav-link" href="./gatitos.html">Gatitos</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- APP MAIN SECTION (INVOICE) -->
+    <main>
+      <div class="container">
+        <table>
+          <tr>
+            <td class="darker-cell" colspan="3" class>
+              <strong>Invoice &#35;123456789</strong>
+            </td>
+            <td class="darker-cell">
+              <strong
+                ><time datetime="2025-01-14">14 January 2025</time></strong
+              >
+            </td>
+          </tr>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <adress>
+                  <div class="tall-cell">
+                    <div><b>Pay to:</b></div>
+                    <div>Acme Billing Co.</div>
+                    <div>123 Main St.</div>
+                    <div>Cityville, NA 12345</div>
+                  </div>
+                </adress>
+              </td>
+              <td colspan="2">
+                <adress>
+                  <div class="tall-cell">
+                    <div><b>Customer:</b></div>
+                    <div>John Smith</div>
+                    <div>321 Willow Way</div>
+                    <div>Southeast Northwestershire, MA 54321</div>
+                  </div>
+                </adress>
+              </td>
+            </tr>
+            <tr>
+              <td class="darker-cell"><b>Name &#47; Description</b></td>
+              <td class="darker-cell"><b>Qty.</b></td>
+              <td class="darker-cell"><b>&#64;</b></td>
+              <td class="darker-cell"><b>Cost</b></td>
+            </tr>
+            <tr>
+              <td>Paperclips</td>
+              <td>1000</td>
+              <td>0.01</td>
+              <td>10.00</td>
+            </tr>
+            <tr>
+              <td>Staples (box)</td>
+              <td>100</td>
+              <td>1.00</td>
+              <td>100.00</td>
+            </tr>
+            <tr>
+              <td class="darker-cell" colspan="3"><b>Subtotal</b></td>
+              <td>110.00</td>
+            </tr>
+            <tr>
+              <td class="darker-cell" colspan="2"><b>Tax</b></td>
+              <td>8&#37;</td>
+              <td>8.80</td>
+            </tr>
+            <tr>
+              <td class="darker-cell" colspan="3"><b>Grand Total</b></td>
+              <td>&#36; 118.80</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- FOOTER CON DIBUJO DE GATO -->
+    <footer>
+      <div class="super-cat-container">
+        <img src="./files/animal-1295654_1280.png" alt="" />
+      </div>
+
+      <div class="footer-bar">
+        <div>
+          <p>
+            &#169; 2023 Renzo Belon • Built for The Bridge Full-Stack Developer
+            Bootcamp
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

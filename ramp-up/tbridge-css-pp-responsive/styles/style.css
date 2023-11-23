@@ -1,0 +1,128 @@
+:root {
+  --header-color: rgb(75, 166, 238);
+  --hero-color: rgb(193, 60, 44);
+  --content-color: rgb(71, 152, 55);
+  --sidebar-color: rgb(97, 60, 176);
+  --footer-color: rgb(97, 97, 97);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.super-container {
+  font-family: "Courier New", Courier, monospace;
+  background-color:rgb(43, 43, 43);
+  color: whitesmoke;
+  padding: 0.5rem;
+  min-height: 100vh;
+  min-width: 260px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  text-align: left;
+  hyphens: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.hidden-alert {
+  display: none;
+}
+
+.loremIpsum {
+  color: rgb(195, 195, 195);
+}
+
+.width-display {
+  border: 1px solid whitesmoke;
+  width: fit-content;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+}
+
+.section {
+  position: relative;
+}
+
+.header-section {
+  background-color: var(--header-color);
+}
+
+.hero-section {
+  background-color: var(--hero-color);
+}
+
+.content-section {
+  background-color: var(--content-color);
+}
+
+.sidebar-section {
+  background-color: var(--sidebar-color);
+}
+
+.footer-section {
+  background-color: var(--footer-color);
+}
+
+/* TABLETS */
+@media screen and (min-width: 480px) {
+  .section-row-02 {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+
+  .content-section {
+    flex-basis: 677px;
+    flex-shrink: 1;
+  }
+  
+  .sidebar-section {
+    flex-basis: 200px;
+    flex-shrink: 0;
+  }
+
+}
+
+/* COMPUTERS */
+@media screen and (min-width: 900px) {
+  .section-row-02 {
+    width: 885px;
+    align-self: center;
+  }
+}
+
+/* HIDDEN ALERT DISPLAY WHEN SCREEN IS TOO NARROW */
+/* TODO: The first emoji is positioned differently from the rest. Why? */
+@media screen and (max-width: 250px) {
+  .section {
+    background-color: red;
+  }
+
+  .hidden-alert {
+    display: block;
+    position: absolute;
+    font-size: 5rem;
+    left: 9.3rem;
+    left: 150px;
+  }
+}

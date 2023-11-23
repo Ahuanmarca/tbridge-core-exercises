@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --almost-white: #E5E5E5;
+  --almost-black: #242528;
+  --large-text-color-1: #E46136;
+  --large-text-color-2: #FFFFFF;
+  --small-text-color: #F1D452;
+  --appbars-color: #B6B6B6;
+  --page-background-color: #66B095;
+
+  --button-color: #e3a793;
+  --button-color-selected: #f2e85d;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Skranji&family=Space+Mono&display=swap');
+@font-face { font-family: "VHS"; src: url(../assets/fonts/easvhs.ttf); }
+@font-face { font-family: "Mario Kart"; src: url(../assets/fonts/Mario-Kart-DS.ttf); }
+@font-face { font-family: "Retro Computer"; src: url(../assets/fonts/retro_computer_personal_use.ttf); }
+/* font-family: "VHS", "Mario Kart", "Retro Computer"; */
+
+.app-bar {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: var(--large-text-color-1);
+}
+
+.app-bar div {
+  width: 50%;
+}
+
+.app-bar > div:nth-of-type(1) {
+  padding: 0.6rem 1rem;
+}
+
+.app-bar > div:nth-of-type(2) {
+  padding: 0.5rem 1rem;
+}
+
+h1 {
+  font-family: "VHS";
+  margin: 0px;
+  color: var(--small-text-color);
+}
+
+.nav-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+  gap: 1rem;
+}
+
+.nav-box li {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--button-color);
+}
+
+.nav-box li.current-page {
+  background-color: var(--button-color-selected);
+}
+
+.nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Retro Computer";
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(204, 77, 68);
+  margin: 0 1rem;
+}
+
+.nav-link:hover {
+  color: rgb(255, 17, 0);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-background-color);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+table {
+  width: 663px;
+  height: 427px;
+  border-collapse: collapse;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+.darker-cell {
+  background-color: rgb(241, 241, 241);
+}
+
+.tall-cell {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+td {
+  width: 100px;
+  padding: 6px;
+}
+
+.super-cat-container {
+  /* background-color: blue; */
+  display: flex;
+  padding: 6rem 6rem 0 1rem;
+  justify-content: flex-start;
+}
+
+.super-cat-container img {
+  width: 35%;
+  position: relative;
+  top: 27px;
+  left: -30px;
+}
+
+.footer-bar {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: var(--large-text-color-1);
+  justify-content: center;
+  align-items: center;
+  color: var(--almost-white);
+  font-weight: bold;
+  font-family: "VHS";
+
+  justify-self: flex-end;
+}
+
+.welcome-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.welcome-center-message {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3em;
+}
+
+
+
+
+
+
+.mi-retrato {
+  height: 400px;
+  border-radius: 100px 0px ;
+}
+
+.about-container {
+  padding: 8rem;
+  gap: 2rem;
+}
+
+.about-section-left,
+.about-section-right {
+  display: flex;
+}
+
+.about-section-left {
+  width: 30%;
+  justify-content: flex-end;
+}
+
+.about-section-right {
+  width: 70%;
+}
+
+
+.about-section-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.3rem;
+  color: var(--almost-black);  
+}
+
+.project-link {
+  font-size: 2rem;
+  font-family: "Retro Computer";
+}
+
+.project-link:hover {
+  color: yellow;
+}

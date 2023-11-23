@@ -1,0 +1,209 @@
+/* USAR
+
+FONTS
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Fuggles', cursive;
+font-family: 'Handlee', cursive;
+font-family: 'Inter', sans-serif;
+
+TODO: Put font families in variables
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fuggles&family=Gloria+Hallelujah&family=Handlee&family=Inter:wght@300&display=swap");
+@font-face {
+  font-family: Pixelmania;
+  src: url(./files/Pixelmania.ttf);
+}
+@font-face {
+  font-family: Creattion;
+  src: url(./files/Creattion\ Demo.otf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Class applied to the <body> tag */
+.letter-paper {
+  padding: 3rem;
+  background-color: darkslategrey;
+}
+
+.super-container {
+  background-color: beige;
+  border: 10px dashed darkgray;
+  padding: 4rem;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* HEADER SECTION */
+
+.header-row {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.header-row > div {
+  width: 50%;
+}
+
+/* .header-logo > p {
+  text-align: left;
+  font-family: Pixelmania;
+} */
+
+/* .header-logo > p > span:nth-of-type(1) { */
+.awesome-text-01 {
+  text-align: left;
+  font-family: Pixelmania;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+/* .header-logo > p > span:nth-of-type(2) { */
+.awesome-text-02 {
+  text-align: left;
+  font-family: Pixelmania;
+  font-size: 1.4rem;
+}
+
+.header-logo > img {
+  width: 50%;
+}
+
+.header-remitente {
+  text-align: right;
+  font-style: italic;
+}
+
+.header-destinatario {
+  text-align: left;
+  font-style: italic;
+}
+
+.header-remitente > div,
+.header-destinatario > div {
+  margin: 0.5rem 0;
+}
+
+.header-remitente > div:nth-of-type(1),
+.header-destinatario > div:nth-of-type(1) {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 1.2rem;
+  color: brown;
+  /* margin-bottom: 0.5rem; */
+}
+
+.header-details
+{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+}
+
+/*
+░█████╗░██╗░░░██╗███████╗██████╗░██████╗░░█████╗░
+██╔══██╗██║░░░██║██╔════╝██╔══██╗██╔══██╗██╔══██╗
+██║░░╚═╝██║░░░██║█████╗░░██████╔╝██████╔╝██║░░██║
+██║░░██╗██║░░░██║██╔══╝░░██╔══██╗██╔═══╝░██║░░██║
+╚█████╔╝╚██████╔╝███████╗██║░░██║██║░░░░░╚█████╔╝
+░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░░░░░╚════╝░
+*/
+
+.standart-paragraph {
+  padding: 0 1rem;
+  text-align: justify;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  hyphens: auto;
+}
+
+li.standart-paragraph {
+  padding-left: 0;
+  margin-left: 4rem;
+}
+
+dt.standart-paragraph {
+  padding-left: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+dd.standart-paragraph {
+  padding-left: 4rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h1, h2 {
+  font-family: "Gloria Hallelujah", cursive;
+  color: brown;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+/* 
+███████╗░█████╗░░█████╗░████████╗███████╗██████╗░
+██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗░░██║░░██║██║░░██║░░░██║░░░█████╗░░██████╔╝
+██╔══╝░░██║░░██║██║░░██║░░░██║░░░██╔══╝░░██╔══██╗
+██║░░░░░╚█████╔╝╚█████╔╝░░░██║░░░███████╗██║░░██║
+╚═╝░░░░░░╚════╝░░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+*/
+
+footer > p:nth-of-type(1) {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  font-weight: bold;
+}
+
+.signature {
+  font-family: Creattion;
+  font-size: 4rem;
+  margin: 4rem o 1rem 0;
+  color: brown;
+  margin-bottom: 3rem;
+}
+
+footer > p:nth-of-type(3) {
+  width: 100%;
+  margin: 2rem 0;
+  writing-mode: vertical-rl;
+  text-align: right;
+  letter-spacing: 0.3rem;
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+footer {
+  position: relative;
+}
+
+footer > img {
+  position: absolute;
+  top: 450px;
+  left: 20px;
+  height: 30%;
+}
+

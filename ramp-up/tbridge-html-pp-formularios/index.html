@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El club viejuner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- FORMULARIO 1: EL CLUB VIEJUNER -->
+      <form action="">
+        <fieldset>
+          <legend>El club viejuner</legend>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="nombre">Nombre</label>
+              </div>
+              <div>
+                <input required id="nombre" type="text" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="apellidos">Apellidos</label>
+              </div>
+              <div>
+                <input required id="apellidos" type="text" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="edad">Edad</label>
+              </div>
+              <div>
+                <input required type="number" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <legend>
+              Sexo:
+              <input
+                required
+                type="radio"
+                id="hombre"
+                name="sexo"
+                value="hombre"
+              /><label for="hombre">Hombre</label>
+              <input
+                required
+                type="radio"
+                id="mujer"
+                name="sexo"
+                value="mujer"
+              /><label for="mujer">Mujer</label>
+            </legend>
+          </div>
+
+          <div class="field-row">
+            <label for="me-siento-viejuner">Me siento viejuner: </label>
+            <input required type="checkbox" />
+          </div>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="sobre-ti">Escribe algo sobre tí</label>
+              </div>
+              <div>
+                <textarea id="sobre-ti" placeholder="hello, world"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="correo">Correo electrónico</label>
+              </div>
+              <div>
+                <input required id="correo" type="email" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="telefono">Teléfono</label>
+              </div>
+              <div>
+                <input required id="telefono" type="tel" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="ladronzuelos-fieldset">
+          <!-- DATE: FECHA -->
+          <legend>Ladronzuelos de bicicletas</legend>
+
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="fecha">Día</label>
+              </div>
+              <div>
+                <input required type="date" name="fecha" id="fecha" />
+              </div>
+            </div>
+          </div>
+
+          <!-- TIME: HORA -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="hora">Hora: </label>
+              </div>
+              <div>
+                <input required type="time" name="hora" id="hora" />
+              </div>
+            </div>
+          </div>
+
+          <!-- COLOR -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="color">Color de la bicicleta</label>
+              </div>
+              <div>
+                <input required type="color" name="color" id="color" />
+              </div>
+            </div>
+          </div>
+
+          <!-- RANGE: PRECIO -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="precio"
+                  >Precio: <span id="price-display">100</span> &euro;</label
+                >
+              </div>
+              <div>
+                <input
+                  required
+                  type="range"
+                  name="precio"
+                  id="precio"
+                  min="100"
+                  max="1000"
+                  value="100"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- SELECTOR: TIPO DE BICICLETA -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="tipo-bicicleta">Tipo de bicicleta</label>
+              </div>
+              <div>
+                <select name="tipo-bicicleta" id="tipo-bicicleta">
+                  <option value="" selected></option>
+                  <optgroup label="Paseo">
+                    <option value="Señorial">Señorial</option>
+                    <option value="Anti-plebeyos">Anti-plebeyos</option>
+                    <option value="PorEncimaDelHombro">
+                      PorEncimaDelHombro
+                    </option>
+                  </optgroup>
+                  <optgroup label="Montaña">
+                    <option value="Gamusinos">Gamusinos</option>
+                    <option value="Hueleflores premium">
+                      Hueleflores premium
+                    </option>
+                    <option value="Fango lover">Fango lover</option>
+                  </optgroup>
+                  <optgroup label="Carreras">
+                    <option value="Metroymedio">Metroymedio</option>
+                    <option value="3 de la tarde, Fluorescente edition">
+                      3 de la tarde, Fluorescente edition
+                    </option>
+                    <option value="Grupitors">Grupitors</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SELECTOR MULTIPLE: ACCESORIOS -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="accesorios">Accesorios</label>
+              </div>
+              <div>
+                <select name="accesorios" id="accesorios" multiple>
+                  <option value="Ruedines">Ruedines</option>
+                  <option value="Pegatinas">Pegatinas</option>
+                  <option value="Cestita">Cestita</option>
+                  <option value="Bomba de aire">Bomba de aire</option>
+                  <option value="Timbre">Timbre</option>
+                  <option value="Foco">Foco</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- DATALIST: MARCA DE LA BICICLETA -->
+          <div class="field-row">
+            <div class="field-type-standart">
+              <div>
+                <label for="seleccion-marca">¿Qué marca era?</label>
+              </div>
+              <div>
+                <input
+                  required
+                  list="marcas-bicicleta"
+                  id="seleccion-marca"
+                  name="seleccion-marca"
+                />
+                <datalist id="marcas-bicicleta">
+                  <option value="specialized"></option>
+                  <option value="trek"></option>
+                  <option value="merida"></option>
+                  <option value="scott"></option>
+                  <option value="giant"></option>
+                  <option value="cube"></option>
+                  <option value="lapierre"></option>
+                  <option value="orbea"></option>
+                  <option value="cannondale"></option>
+                  <option value="bmc"></option>
+                  <option value="canyon"></option>
+                  <option value="look"></option>
+                  <option value="protek"></option>
+                  <option value="megamo"></option>
+                  <option value="pinarello"></option>
+                  <option value="bianchi"></option>
+                  <option value="bh"></option>
+                  <option value="factor"></option>
+                  <option value="ghost"></option>
+                  <option value="cervélo"></option>
+                  <option value="argon"></option>
+                </datalist>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- BOTONES PARTE BAJA -->
+        <div class="field-row form-buttons-bar">
+          <div class="button-container">
+            <input type="submit" value="Confirmar" />
+          </div>
+          <div class="button-container">
+            <input type="reset" value="Reestablecer">
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      const priceInput = document.querySelector("#precio");
+      const priceDisplay = document.querySelector("#price-display");
+      priceInput.addEventListener("input", (e) => {
+        priceDisplay.innerHTML = e.target.value;
+      });
+    </script>
+  </body>
+</html>

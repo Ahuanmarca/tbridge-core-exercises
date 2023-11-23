@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <style>
+    :root {
+      --header-color: rgb(75, 166, 238);
+      --hero-color: rgb(193, 60, 44);
+      --content-color: rgb(71, 152, 55);
+      --sidebar-color: rgb(97, 60, 176);
+      --footer-color: rgb(97, 97, 97);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    .super-container {
+      font-family: "Courier New", Courier, monospace;
+      background-color: rgb(43, 43, 43);
+      color: whitesmoke;
+      padding: 0.5rem;
+      min-height: 100vh;
+      min-width: 260px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      text-align: left;
+      hyphens: auto;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .hidden-alert {
+      display: none;
+    }
+
+    .loremIpsum {
+      color: rgb(195, 195, 195);
+    }
+
+    .width-display {
+      border: 1px solid whitesmoke;
+      width: fit-content;
+      padding: 0.2rem 0.4rem;
+      border-radius: 10px;
+    }
+
+    .section {
+      position: relative;
+    }
+
+    .header-section {
+      background-color: var(--header-color);
+    }
+
+    .hero-section {
+      background-color: var(--hero-color);
+    }
+
+    .content-section {
+      background-color: var(--content-color);
+    }
+
+    .sidebar-section {
+      background-color: var(--sidebar-color);
+    }
+
+    .footer-section {
+      background-color: var(--footer-color);
+    }
+
+    /* TABLETS */
+    @media screen and (min-width: 480px) {
+      .section-row-02 {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .content-section {
+        flex-basis: 677px;
+        flex-shrink: 1;
+      }
+
+      .sidebar-section {
+        flex-basis: 200px;
+        flex-shrink: 0;
+      }
+    }
+
+    /* COMPUTERS */
+    @media screen and (min-width: 900px) {
+      .section-row-02 {
+        width: 885px;
+        align-self: center;
+      }
+    }
+
+    /* HIDDEN ALERT DISPLAY WHEN SCREEN IS TOO NARROW */
+    /* TODO: The first emoji is positioned differently from the rest. Why? */
+    @media screen and (max-width: 250px) {
+      .section {
+        background-color: red;
+      }
+
+      .hidden-alert {
+        display: block;
+        position: absolute;
+        font-size: 5rem;
+        left: 9.3rem;
+        left: 150px;
+      }
+    }
+  </style>
+  <body>
+    <div class="super-container">
+      <!-- HEADER AND HERO CONTAINER, always column -->
+      <div class="section-row-01">
+        <header class="header-section section">
+          <p class="hidden-alert">😣</p>
+          <p>Header</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>The Bridge Full-Stack Bootcamp</p>
+        </header>
+        <div class="hero-section section">
+          <p class="hidden-alert">😨</p>
+          <p>Hero</p>
+          <p class="width-display">Width: <span></span></p>
+          <h1>CSS Responsive Layout with Media Queries</h1>
+          <p>Using Media Queries, Break Points and Flexbox.</p>
+        </div>
+      </div>
+
+      <!-- CONTENT AND SIDEBAR CONTAINER,
+      Changes with Media Queries -->
+      <div class="section-row-02">
+        <main class="content-section section">
+          <p class="hidden-alert">😓</p>
+          <p>Content</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>
+            The "Content" and "Sidebar" sections are inside a container div.
+            This container changes to "display: flex" when the viewport hits the
+            first break point (min-width: 480px).
+          </p>
+          <h2>Break Points</h2>
+          <h3>Mobile Devices</h3>
+          <p>
+            My default CSS rules are applied from 0 pixels and up, without Media
+            Queries or Break Points, so the layout is Mobile First.
+          </p>
+          <p>Content and Sidebar will be stacked.</p>
+          <h3>Tablets</h3>
+          <p>My first break point is set to <b>min-width: 480px.</b></p>
+          <p>
+            It applies some CSS rules only from 480 pixels width and up, to
+            accomodate tablet screens.
+          </p>
+          <p>
+            The container div for "Content" and "Sidebar" sets it's display to
+            flex, so it's children divs are arranged in a row (using
+            <b>Flexbox</b>).
+          </p>
+          <p></p>
+          <h3>Computers</h3>
+          <p>
+            My second break point is set to <b>min-width: 900px</b> to
+            accomodate computer screens.
+          </p>
+          <p>
+            The containr will get a fixed width and will be centered on the
+            screen. There will be margins to the left and right of the
+            container.
+          </p>
+          <h3>Hidden Alert</h3>
+          <p>
+            The rules form the break points that appear later in the document
+            can override the ones that appear earlier (higher) in the document
+            (because of the CSS cascade). Try to shrink the screen to less than
+            250 pixels wide.
+          </p>
+        </main>
+        <aside class="sidebar-section section">
+          <p class="hidden-alert">😬</p>
+          <p>Sidebar</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>On the first break point, this section gets:</p>
+          <p><code>flex-basis: 200px</code></p>
+          <p><code>flex-shrink: 0</code></p>
+          <p>The div will never shrink below 200px.</p>
+          <p>
+            It could grow, but there's not any aditional space within the
+            container div.
+          </p>
+          <hr />
+          <p class="loremIpsum">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque
+            similique consequatur quae inventore pariatur, officia id sapiente
+            vitae, ipsa, harum atque illo quaerat.
+          </p>
+        </aside>
+      </div>
+
+      <!-- FOOTER CONTAINER DIV, only contains the footer.
+      Using it for consistency with containers above -->
+      <div class="section-row-03">
+        <footer class="footer-section section">
+          <p class="hidden-alert">🤕</p>
+          <p>Footer</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>
+            &#169; Renzo Belon 2023 - Created for The Bridge Full-Stack Bootcamp
+            in Valencia.
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+
+    <script>
+      const allSections = document.querySelectorAll(".section");
+      setInterval(() => {
+        for (let i = 0; i < 5; i++) {
+          const myWidth = window
+            .getComputedStyle(allSections[i])
+            .getPropertyValue("width");
+          allSections[i].querySelector("span").innerHTML = myWidth;
+        }
+      }, 40);
+    </script>
+  </body>
+</html>

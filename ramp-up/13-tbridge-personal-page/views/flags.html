@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flags</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        /* Spain */
+        --color-spain-01: rgb(181, 41, 40);
+        --color-spain-02: rgb(246, 198, 68);
+        /* Argentina */
+        --color-argentina-01: rgb(128, 170, 218);
+        --color-argentina-02: rgb(255, 255, 255);
+        /* Germany */
+        --color-germany-01: rgb(0, 0, 0);
+        --color-germany-02: rgb(203, 43, 29);
+        --color-germany-03: rgb(247, 208, 70);
+        /* France */
+        --color-france-01: rgb(11, 37, 81);
+        --color-france-02: rgb(255, 255, 255);
+        --color-france-03: rgb(189, 45, 47);
+        /* Italy */
+        --color-italy-01: rgb(64, 144, 78);
+        --color-italy-02: rgb(255, 255, 255);
+        --color-italy-03: rgb(189, 59, 61);
+        /* Costa Rica */
+        --color-costa-rica-01: rgb(4, 20, 131);
+        --color-costa-rica-02: rgb(255, 255, 255);
+        --color-costa-rica-03: rgb(200 60 43);
+        /* Catalunya */
+        --color-catalunya-01: rgb(247 222 76);
+        --color-catalunya-02: rgb(200 48 41);
+        /* Guinea-Bissau */
+        --color-guinea-bissau-01: rgb(189, 45, 47);
+        --color-guinea-bissau-02: rgb(245, 211, 75);
+        --color-guinea-bissau-03: rgb(70, 156, 82);
+        /* Arab Emirates */
+        --color-arab-emirates-01: rgb(234, 51, 35);
+        --color-arab-emirates-02: rgb(49, 113, 55);
+        --color-arab-emirates-03: rgb(255, 255, 255);
+        --color-arab-emirates-04: rgb(0, 0, 0);
+        /* Japan */
+        --color-japan-01: rgb(172, 35, 50);
+        --color-japan-02: rgb(255, 255, 255);
+        /* Panama */
+        --color-panama-01: rgb(255, 255, 255);
+        --color-panama-02: rgb(200, 48, 41);
+        --color-panama-03: rgb(15, 34, 84);
+        /* Dominican Republic */
+        --color-dominican-republic-01: rgb(15, 44, 94);
+        --color-dominican-republic-02: rgb(189, 45, 47);
+        --color-dominican-republic-03: rgb(255, 255, 255); /* white cross */
+        /* United States of America */
+        --color-united-states-01: rgb(60, 59, 107);
+        --color-united-states-02: rgb(164, 49, 56);
+        --color-united-states-03: rgb(255, 255, 255);
+        /* Toggle Hide / Show Flags */
+        --toggle-display: none;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      .flag {
+        width: 12rem;
+        height: 8rem;
+        /* border: 1px solid greenyellow; */
+      }
+
+      .flag-type-rows {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flag-type-columns {
+        display: flex;
+      }
+
+      /* SPAIN */
+      .flag-spain > div:nth-of-type(1),
+      .flag-spain > div:nth-of-type(3) {
+        background-color: var(--color-spain-01);
+        height: 25%;
+      }
+      .flag-spain > div:nth-of-type(2) {
+        background-color: var(--color-spain-02);
+        height: 50%;
+      }
+
+      /* ARGENTINA */
+      .flag-argentina > div:nth-of-type(1),
+      .flag-argentina > div:nth-of-type(3) {
+        background-color: var(--color-argentina-01);
+      }
+      .flag-argentina > div:nth-of-type(2) {
+        background-color: var(--color-argentina-02);
+      }
+      .flag-argentina > div {
+        flex-grow: 1;
+      }
+
+      /* GERMANY */
+      .flag-germany > div:nth-of-type(1) {
+        background-color: var(--color-germany-01);
+      }
+      .flag-germany > div:nth-of-type(2) {
+        background-color: var(--color-germany-02);
+      }
+      .flag-germany > div:nth-of-type(3) {
+        background-color: var(--color-germany-03);
+      }
+      .flag-germany > div {
+        flex-grow: 1;
+      }
+
+      /* FRANCE */
+      .flag-france > div:nth-of-type(1) {
+        background-color: var(--color-france-01);
+      }
+      .flag-france > div:nth-of-type(2) {
+        background-color: var(--color-france-02);
+      }
+      .flag-france > div:nth-of-type(3) {
+        background-color: var(--color-france-03);
+      }
+      .flag-france > div {
+        flex-grow: 1;
+      }
+
+      /* ITALY */
+      .flag-italy > div:nth-of-type(1) {
+        background-color: var(--color-italy-01);
+      }
+      .flag-italy > div:nth-of-type(2) {
+        background-color: var(--color-italy-02);
+      }
+      .flag-italy > div:nth-of-type(3) {
+        background-color: var(--color-italy-03);
+      }
+      .flag-italy > div {
+        flex-grow: 1;
+      }
+
+      /* COSTA RICA */
+      .flag-costa-rica > div:nth-of-type(1),
+      .flag-costa-rica > div:nth-of-type(5) {
+        background-color: var(--color-costa-rica-01);
+        flex-basis: 0px;
+        flex-grow: 2;
+      }
+      .flag-costa-rica > div:nth-of-type(2),
+      .flag-costa-rica > div:nth-of-type(4) {
+        background-color: var(--color-costa-rica-02);
+        flex-basis: 0px;
+        flex-grow: 2;
+      }
+      .flag-costa-rica > div:nth-of-type(3) {
+        background-color: var(--color-costa-rica-03);
+        flex-basis: 0px;
+        flex-grow: 4;
+      }
+
+      /* CATALUNYA */
+      .flag-catalunya > div:nth-of-type(odd) {
+        background-color: var(--color-catalunya-01);
+        flex-grow: 1;
+      }
+      .flag-catalunya > div:nth-of-type(even) {
+        background-color: var(--color-catalunya-02);
+        flex-grow: 1;
+      }
+
+      /* 08 GUINEA-BISSAU */
+      .flag-guinea-bissau {
+        display: flex;
+      }
+      .flag-guinea-bissau > .col-01 {
+        background-color: var(--color-guinea-bissau-01);
+        flex-basis: 0px;
+        flex-grow: 1;
+      }
+
+      .flag-guinea-bissau > .col-02 {
+        flex-basis: 0px;
+        flex-grow: 2;
+
+        display: flex;
+        flex-direction: column;
+      }
+      .flag-guinea-bissau > .col-02 > div {
+        flex-grow: 1;
+      }
+      .flag-guinea-bissau > .col-02 > div:nth-of-type(1) {
+        background-color: var(--color-guinea-bissau-02);
+      }
+      .flag-guinea-bissau > .col-02 > div:nth-of-type(2) {
+        background-color: var(--color-guinea-bissau-03);
+      }
+
+      /* 09 ARAB EMIRATES */
+      .flag-arab-emirates {
+        display: flex;
+      }
+      .flag-arab-emirates > .col-01 {
+        background-color: var(--color-arab-emirates-01);
+        flex-basis: 0px;
+        flex-grow: 1;
+      }
+
+      .flag-arab-emirates > .col-02 {
+        flex-basis: 0px;
+        flex-grow: 3;
+
+        display: flex;
+        flex-direction: column;
+      }
+      .flag-arab-emirates > .col-02 > div {
+        flex-grow: 1;
+      }
+      .flag-arab-emirates > .col-02 > div:nth-of-type(1) {
+        background-color: var(--color-arab-emirates-02);
+      }
+      .flag-arab-emirates > .col-02 > div:nth-of-type(2) {
+        background-color: var(--color-arab-emirates-03);
+      }
+      .flag-arab-emirates > .col-02 > div:nth-of-type(3) {
+        background-color: var(--color-arab-emirates-04);
+      }
+
+      /* 10 JAPAN */
+      .flag-japan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-japan-02);
+      }
+      .flag-japan > div {
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        background-color: var(--color-japan-01);
+      }
+
+      /* 11 PANAMA */
+      .flag-panama {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .flag-panama > div {
+        width: 50%;
+        height: 50%;
+      }
+      .flag-panama > div:nth-of-type(1),
+      .flag-panama > div:nth-of-type(4) {
+        background-color: var(--color-panama-01);
+      }
+      .flag-panama > div:nth-of-type(2) {
+        background-color: var(--color-panama-02);
+      }
+      .flag-panama > div:nth-of-type(3) {
+        background-color: var(--color-panama-03);
+      }
+
+      /* 12 DOMINICAN REPUBLIC */
+      .flag-dominican-republic > .corners {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-dominican-republic-03);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+      }
+
+      /* The white cross is 1.6 rem thick !! */
+      /* I'm leaving that much gap between the corners */
+      .corners > div {
+        width: 5.2rem;
+        height: 3.3rem; /* Tried 3.2, looked bad */
+      }
+
+      .corners > div:nth-of-type(1),
+      .corners > div:nth-of-type(4) {
+        background-color: var(--color-dominican-republic-01);
+      }
+
+      .corners > div:nth-of-type(2),
+      .corners > div:nth-of-type(3) {
+        background-color: var(--color-dominican-republic-02);
+      }
+
+      /* 13 UNITED STATES OF AMERICA */
+      .flag-united-states {
+        position: relative;
+      }
+
+      .us-flag-union {
+        background-color: var(--color-united-states-01);
+        height: 4.32rem;
+        width: 5.07rem;
+        padding: 0.1rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+      }
+
+      .us-flag-union > img {
+        width: 7px;
+        height: 6px;
+      }
+
+      .us-flag-union > img:nth-of-type(even) {
+        opacity: 0;
+      }
+
+      .union-row {
+        height: 0.45rem;
+        width: 100%;
+        display: flex;
+        border: 0.1px solid greenyellow;
+        color: white;
+      }
+
+      .flag-united-states > .us-flag-rows {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .flag-united-states > .us-flag-rows > div:nth-of-type(odd) {
+        background-color: var(--color-united-states-02);
+        flex-grow: 1;
+      }
+
+      .flag-united-states > .us-flag-rows > div:nth-of-type(even) {
+        background-color: var(--color-united-states-03);
+        flex-grow: 1;
+      }
+
+      /* HIDE SOME FLAGS */
+      /* .flag-spain,  */
+      /* .flag-argentina,  */
+      /* .flag-germany,  */
+      /* .flag-france,  */
+      /* .flag-italy,  */
+      /* .flag-costa-rica,  */
+      /* .flag-catalunya,  */
+      /* .flag-guinea-bissau,  */
+      /* .flag-arab-emirates,  */
+      /* .flag-japan,  */
+      /* .flag-panama,  */
+      /* .flag-dominican-republic  */
+      /* .flag-united-states  */
+      /* { */
+      /* display: var(--toggle-display); */
+      /* } */
+
+      body {
+        background-color: darkgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .super-container {
+        padding: 1rem 2rem;
+        display: flex;
+        gap: 3rem;
+      }
+
+      .container-01 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .container-01 > div {
+        display: flex;
+        padding: 0 1rem;
+      }
+
+      .container-01-a {
+        justify-content: space-around;
+      }
+
+      .container-01-b {
+        justify-content: space-between;
+        width: 700px;
+        align-self: center;
+      }
+
+      .container-01-c {
+        gap: 3rem;
+      }
+
+      .container-02 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="super-container">
+      <div class="container-01">
+        <div class="container-01-a">
+          <!-- SPAIN -->
+          <div class="flag-01 flag-spain flag-type-rows flag">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- ARGENTINA -->
+          <div class="flag-02 flag-argentina flag-type-rows flag">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- GERMANY -->
+          <div class="flag-03 flag-germany flag-type-rows flag">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <!-- CONTAINER 01 A ENDING -->
+        <div class="container-01-b">
+          <!-- FRANCE -->
+          <div class="flag-04 flag-france flag-type-columns flag">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- ITALY -->
+          <div class="flag-05 flag-italy flag-type-columns flag">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <!-- CONTAINER 01 B ENDING -->
+
+        <div class="container-01-c">
+          <!-- COSTA RICA -->
+          <div class="flag-06 flag-costa-rica flag-type-rows flag">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- CATALUNYA -->
+          <div class="flag-07 flag-catalunya flag-type-rows flag">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+          <!-- GUINEA-BISSAU -->
+          <div class="flag-08 flag-guinea-bissau flag">
+            <div class="col-01"></div>
+            <div class="col-02">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <!-- ARAB EMIRATES -->
+          <div class="flag-09 flag-arab-emirates flag">
+            <div class="col-01"></div>
+            <div class="col-02">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <!-- CONTAINER 01 C ENDING -->
+      </div>
+      <!-- CONTAINER 01 ENDING -->
+
+      <div class="container-02">
+        <!-- JAPAN -->
+        <div class="flag-10 flag-japan flag">
+          <div></div>
+        </div>
+
+        <!-- PANAMA -->
+        <div class="flag-11 flag-panama flag">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- DOMINICAN REPUBLIC -->
+        <div class="flag-11 flag-dominican-republic flag">
+          <div class="corners">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- UNITED STATES OF AMERICA -->
+        <div class="flag-12 flag-united-states flag">
+          <!-- Stars container with 9 rows and 11 columns of stars -->
+          <div class="us-flag-union">
+            <!-- HERE: The 99 stars are added with JavaScript at the bottom -->
+          </div>
+          <div class="us-flag-rows">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTAINER 02 ENDING -->
+    </div>
+    <!-- SUPER CONTAINER ENDING -->
+
+    <script>
+      for (let i = 0; i < 99; i++) {
+        const newStar = document.createElement("img");
+        newStar.src = "../assets/flags/star.png";
+        document.querySelector(".us-flag-union").appendChild(newStar);
+      }
+    </script>
+  </body>
+</html>

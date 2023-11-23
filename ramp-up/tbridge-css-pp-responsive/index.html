@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div class="super-container">
+      <!-- HEADER AND HERO CONTAINER, always column -->
+      <div class="section-row-01">
+        <header class="header-section section">
+          <p class="hidden-alert">😣</p>
+          <p>Header</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>The Bridge Full-Stack Bootcamp</p>
+        </header>
+        <div class="hero-section section">
+          <p class="hidden-alert">😨</p>
+          <p>Hero</p>
+          <p class="width-display">Width: <span></span></p>
+          <h1>CSS Responsive Layout with Media Queries</h1>
+          <p>Using Media Queries, Break Points and Flexbox.</p>
+        </div>
+      </div>
+
+      <!-- CONTENT AND SIDEBAR CONTAINER,
+      Changes with Media Queries -->
+      <div class="section-row-02">
+        <main class="content-section section">
+          <p class="hidden-alert">😓</p>
+          <p>Content</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>
+            The "Content" and "Sidebar" sections are inside a container div.
+            This container changes to "display: flex" when the viewport hits the
+            first break point (min-width: 480px).
+          </p>
+          <h2>Break Points</h2>
+          <h3>Mobile Devices</h3>
+          <p>
+            My default CSS rules are applied from 0 pixels and up, without Media
+            Queries or Break Points, so the layout is Mobile First.
+          </p>
+          <p>Content and Sidebar will be stacked.</p>
+          <h3>Tablets</h3>
+          <p>My first break point is set to <b>min-width: 480px.</b></p>
+          <p>
+            It applies some CSS rules only from 480 pixels width and up, to
+            accomodate tablet screens.
+          </p>
+          <p>
+            The container div for "Content" and "Sidebar" sets it's display to
+            flex, so it's children divs are arranged in a row (using
+            <b>Flexbox</b>).
+          </p>
+          <p></p>
+          <h3>Computers</h3>
+          <p>
+            My second break point is set to <b>min-width: 900px</b> to
+            accomodate computer screens.
+          </p>
+          <p>
+            The containr will get a fixed width and will be centered on the
+            screen. There will be margins to the left and right of the
+            container.
+          </p>
+          <h3>Hidden Alert</h3>
+          <p>
+            The rules form the break points that appear later in the document
+            can override the ones that appear earlier (higher) in the document
+            (because of the CSS cascade). Try to shrink the screen to less than
+            250 pixels wide.
+          </p>
+
+        </main>
+        <aside class="sidebar-section section">
+          <p class="hidden-alert">😬</p>
+          <p>Sidebar</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>On the first break point, this section gets:</p>
+          <p><code>flex-basis: 200px</code></p>
+          <p><code>flex-shrink: 0</code></p>
+          <p>The div will never shrink below 200px.</p>
+          <p>
+            It could grow, but there's not any aditional space within the
+            container div.
+          </p>
+          <hr />
+          <p class="loremIpsum">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque
+            similique consequatur quae inventore pariatur, officia id sapiente
+            vitae, ipsa, harum atque illo quaerat.
+          </p>
+        </aside>
+      </div>
+
+      <!-- FOOTER CONTAINER DIV, only contains the footer.
+      Using it for consistency with containers above -->
+      <div class="section-row-03">
+        <footer class="footer-section section">
+          <p class="hidden-alert">🤕</p>
+          <p>Footer</p>
+          <p class="width-display">Width: <span></span></p>
+          <p>
+            &#169; Renzo Belon 2023 - Created for The Bridge Full-Stack Bootcamp
+            in Valencia.
+          </p>
+        </footer>
+      </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+
+    <script>
+      const allSections = document.querySelectorAll(".section");
+      setInterval(() => {
+        for (let i = 0; i < 5; i++) {
+          const myWidth = window
+            .getComputedStyle(allSections[i])
+            .getPropertyValue("width");
+          allSections[i].querySelector("span").innerHTML = myWidth;
+        }
+      }, 40);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.super-container {
+  height: 100vh;
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  height: 60px;
+  background-color: rgb(227, 238, 242);
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container,
+.logo-img {
+  height: 100%;
+}
+
+.nav-bar {
+  font-family: "VHS";
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: gray;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: goldenrod;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+}
+
+main > div {
+  width: 50%;
+}
+
+.main-text {
+  font-family: "VHS";
+  font-family: "Retro Computer";
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+h1 {
+  color: coral;
+}
+h2 {
+  color: green;
+}
+
+.main-portrait > img {
+  width: 100%;
+  padding: 1rem;
+}
+
+
+footer {
+  height: 60px;
+  background-color: rgb(227, 238, 242);
+  padding: 0.5rem 1rem 0.5rem 0.5rem; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "VHS";
+  font-size: 0.8rem;
+  color: gray;
+}

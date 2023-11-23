@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+
+h2 {
+  font-family: 'Sedgwick Ave Display', cursive;
+  color: rgb(72, 78, 60);
+  letter-spacing: 0.1rem;
+}
+
+.gatitos-container {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gatitos-section {
+  /* border: 1px solid red; */
+  height: 42vh;
+  width: 80%;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  overflow: hidden;
+}
+
+.gatitos-section div {
+  width: 50%;
+}
+
+.music-cat-container,
+.renovation-cat-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.gatitos-section-01 div:nth-of-type(1) img {
+  width: 40%;
+}
+.gatitos-section-01 div:nth-of-type(2) img {
+  width: 95%;
+}
+
+.gatitos-section-02 {
+  height: fit-content;
+}
+
+.gatitos-section-02 div {
+  padding: 0.5rem;
+}
+
+video {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.gatitos-section-03 {
+  height: fit-content;
+  justify-content: center;
+}
+
+.app-bar-secondary {
+  justify-content: center;
+  height: fit-content;
+  background-color: rgb(241, 241, 241);
+  border: 2px solid darkgray;
+}
+
+.nav-link-secondary {
+  font-size: 1rem;
+}
+
